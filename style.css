@@ -423,10 +423,7 @@
     .about img{
       width: 52vw;
     }
-    @keyframes words {
-    0%,
-    20%{
-        content: "Homework Reminder";
-        }
-    }
+    .text-animation span {
+        white-space: pre;
+      }
   }
