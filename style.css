@@ -323,4 +323,9 @@ span {
         margin: auto;
         padding-right: 5rem;
     }
+    .btn-group {
+        margin: auto;
+        padding-top: 6rem;
+    }
+    
 }
