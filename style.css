@@ -279,12 +279,9 @@ span {
 }
 
 @media (max-width: 1000px) {
-    #menu-icon, #darkmodem {
-        font-size: 5rem;
+    #menu-icon, #darkmode {
+        font-size: 9rem;
         display: block;
-    }
-    .logo {
-        font-size: 7rem;
     }
 
     .navbar {
@@ -324,10 +321,11 @@ span {
         max-width: 600px;
         margin: 0 auto;
     }
+    
     .logo {
         margin: auto;
-        
         padding-right: 5rem;
+        font-size: 7rem;
     }
     .btn-group {
         margin: auto;
