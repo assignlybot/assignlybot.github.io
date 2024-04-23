@@ -279,12 +279,14 @@ span {
 }
 
 @media (max-width: 1000px) {
-    #menu-icon {
+    #menu-icon, #darkmode {
+        font-size: 5rem;
         display: block;
     }
-    .header {
-        padding: 7rem 5% 7rem;
+    .logo {
+        font-size: 3rem;
     }
+
     .navbar {
         position: absolute;
         top: 100%;
@@ -324,6 +326,7 @@ span {
     }
     .logo {
         margin: auto;
+        
         padding-right: 5rem;
     }
     .btn-group {
