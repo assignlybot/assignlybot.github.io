@@ -280,10 +280,13 @@ span {
 
 @media (max-width: 1000px) {
     #menu-icon, #darkmode {
-        font-size: 6rem;
-        display: block;
+        font-size: 5rem;
+        display: flex;
     }
-
+    section {
+        min-height: 200vh;
+        padding: 20rem 0% 20rem;
+    }
     .navbar {
         position: absolute;
         top: 100%;
@@ -312,14 +315,19 @@ span {
     }
     .home-content h3 {
         font-size: 2.6rem;
+        margin: auto;
+        padding-top: 2rem;
     }
     .home-content h1 {
         font-size: 8rem;
-        margin-top: 3rem;
+        margin: auto;
+
     }
     .home-content p {
         max-width: 600px;
-        margin: 0 auto;
+        margin: auto;
+        padding-top: 5rem;
+        font-size: 2rem;
     }
     
     .logo {
@@ -330,6 +338,11 @@ span {
     .btn-group {
         margin: auto;
         padding-top: 6rem;
+    }
+
+    .btn {
+        font-size: 3rem;
+        margin-top: 10rem;
     }
     
 }
