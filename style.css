@@ -282,6 +282,9 @@ span {
     #menu-icon {
         display: block;
     }
+    .header {
+        padding: 7rem 5% 7rem;
+    }
     .navbar {
         position: absolute;
         top: 100%;
