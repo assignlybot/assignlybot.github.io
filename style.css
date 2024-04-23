@@ -27,6 +27,7 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    
 }
 
 .header {
@@ -36,7 +37,7 @@ body {
     width: 100%;
     padding: 2rem 5% 2rem;
     background: var(--bg-color);
-    box-shadow: 5px 3px 50px 2px rgb(227,213,201);
+    box-shadow: 5px 3px 10px 2px rgb(227,213,201);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -285,7 +286,8 @@ span {
     }
     section {
         min-height: 100vh;
-        padding: 10rem 0% 10rem;
+        padding-top: 20%;
+        
     }
     .navbar {
         position: absolute;
