@@ -284,8 +284,8 @@ span {
         display: flex;
     }
     section {
-        min-height: 200vh;
-        padding: 20rem 0% 20rem;
+        min-height: 100vh;
+        padding: 10rem 0% 10rem;
     }
     .navbar {
         position: absolute;
@@ -315,21 +315,21 @@ span {
     }
     .home-content h3 {
         font-size: 2.6rem;
-        margin: auto;
-        padding-top: 2rem;
+        padding-top: 1rem;
     }
     .home-content h1 {
         font-size: 8rem;
-        margin: auto;
 
     }
     .home-content p {
         max-width: 600px;
         margin: auto;
-        padding-top: 5rem;
+        padding-top: 10px;
         font-size: 2rem;
     }
-    
+    .home-img img{
+        width: 300px;
+    }
     .logo {
         margin: auto;
         padding-right: 5rem;
@@ -337,12 +337,11 @@ span {
     }
     .btn-group {
         margin: auto;
-        padding-top: 6rem;
     }
 
     .btn {
         font-size: 3rem;
-        margin-top: 10rem;
+        margin-top: 5rem;
     }
     
 }
