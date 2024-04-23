@@ -31,7 +31,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 10% 2rem;
+    padding: 2rem 5% 2rem;
     background: var(--bg-color);
     box-shadow: 5px 3px 50px 2px rgb(227,213,201);
     display: flex;
@@ -49,6 +49,8 @@ body {
     font-weight: 800;
     cursor: pointer;
     transition: 0,3s ease;
+    margin-right: auto;
+    padding-left: 5rem;
 }
 .logo:hover {
     transform: scale(1.1);
@@ -88,6 +90,12 @@ body {
     font-size: 3.6rem;
     color: var(--main-color);
     display: none;
+}
+
+#darkmode {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: block;
 }
 
 section {
@@ -132,19 +140,12 @@ span {
     line-height: 1;
 }
 
-.home-img {
-    border-radius: 50%;
-}
 .home-img img {
     position: relative;
     top: 3rem;
-    width: 32vw;
-    border-radius: 50%;
+    width: 400px;
     cursor: pointer;
     transition: 0.4s ease-in-out;
-    background-color: var(--second-bg-color);
-    border-radius: 4rem;
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .home-content p {
     font-size: 1.5rem;
@@ -262,5 +263,64 @@ span {
     80%,
     85% {
         width: calc(100% + 8px);
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-group {
+        align-items: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3%;
+        background: var(--second-bg-color);
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display: none;
+    }
+    .navbar.active {
+        display: block;
+    }
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: white;
+    }
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+    .home-content h1 {
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+    .home-content p {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .logo {
+        margin: auto;
+        padding-right: 5rem;
     }
 }
