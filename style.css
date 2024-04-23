@@ -280,7 +280,7 @@ span {
 
 @media (max-width: 1000px) {
     #menu-icon, #darkmode {
-        font-size: 9rem;
+        font-size: 6rem;
         display: block;
     }
 
