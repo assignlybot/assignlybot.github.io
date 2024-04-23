@@ -102,7 +102,7 @@ body {
     display: block;
 }
 
-section {
+#home {
     min-height: 100vh;
     padding: 10rem 12% 10rem;
 }
@@ -163,7 +163,7 @@ span {
     padding: 1rem 2.8rem;
     border-radius: 4rem;
     background: var(--main-color);
-    font-size: 1.6rem;
+    font-size: 2.5rem;
     color: white;
     border: 2px solid transparent;
     letter-spacing: 0.1rem;
@@ -273,10 +273,7 @@ span {
 @media screen and (max-width: 1300px) {
     .home {
       display: flex;
-      flex-direction: column;
-      align-items: center;
     }
-
 }
 
 @media (max-width: 1000px) {
@@ -284,11 +281,11 @@ span {
         font-size: 5rem;
         display: flex;
     }
-    section {
-        min-height: 100vh;
-        padding-top: 20%;
-        
+    #home {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
+
     .navbar {
         position: absolute;
         top: 100%;
@@ -302,48 +299,55 @@ span {
         border-bottom: 2px solid var(--main-color);
         display: none;
     }
+
     .navbar.active {
         display: block;
     }
+
     .navbar a {
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
         color: white;
     }
+
     .home {
         flex-direction: column;
         margin: 5rem 4rem;
     }
+
     .home-content h3 {
         font-size: 2.6rem;
         padding-top: 1rem;
     }
+
     .home-content h1 {
         font-size: 8rem;
-
     }
+
     .home-content p {
         max-width: 600px;
         margin: auto;
         padding-top: 10px;
         font-size: 2rem;
     }
-    .home-img img{
+
+    .home-img img {
         width: 300px;
     }
+
     .logo {
         margin: auto;
         padding-right: 5rem;
         font-size: 7rem;
     }
+
     .btn-group {
         margin: auto;
     }
 
     .btn {
-        font-size: 3rem;
+        font-size: 4vw;
         margin-top: 5rem;
     }
-    
 }
