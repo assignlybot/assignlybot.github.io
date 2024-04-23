@@ -295,6 +295,7 @@
     font-size: 34px;
     font-weight: 600;
     min-width: 280;
+    white-space: pre;
   }
   .text-animation span {
     position: relative;
