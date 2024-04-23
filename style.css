@@ -279,12 +279,12 @@ span {
 }
 
 @media (max-width: 1000px) {
-    #menu-icon, #darkmode {
+    #menu-icon, #darkmodem {
         font-size: 5rem;
         display: block;
     }
     .logo {
-        font-size: 3rem;
+        font-size: 7rem;
     }
 
     .navbar {
