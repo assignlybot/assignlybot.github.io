@@ -39,7 +39,7 @@
     z-index: 100;
   }
   #menu-icon{
-    font-size: 3.6rem;
+    font-size: 3rem;
     color: var(--text-color);
     display: none;
   }
@@ -372,6 +372,9 @@
     #menu-icon{
       display: block;
     }
+    .studypal{
+        margin-bottom: 5rem;
+    }
     .logo{
       margin: auto;
     }
@@ -397,13 +400,14 @@
       display: block;
     }
     .home{
-      flex-direction: column-reverse;
+      flex-direction: column;
       margin: 5rem 0;
       gap: 5rem;
     }
     .home-content{
       align-items: center;
       text-align: center;
+      margin-bottom: 4rem;
     }
     .home-img img{
       display: none;
