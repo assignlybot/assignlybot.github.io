@@ -373,8 +373,7 @@
       display: block;
     }
     .logo{
-      margin-left: auto;
-      padding-right: 5rem;
+      margin: auto;
     }
     .navbar{
       position: absolute;
@@ -407,10 +406,10 @@
       text-align: center;
     }
     .home-img img{
-      width: 52vw;
+      display: none;
     }
     .about{
-      flex-direction: column-reverse;
+      flex-direction: column;
       text-align: center;
     }
     .about h2{
