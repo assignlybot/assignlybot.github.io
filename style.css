@@ -16,10 +16,10 @@
     overflow-x: hidden;
   }
   :root {
-    --bg-color: #0c0804;
-    --second-bg-color: #161008;
+    --bg-color: #161a16;
+    --second-bg-color: #151814;
     --text-color: white;
-    --main-color: #f7c354;
+    --main-color: #93a891;
   }
   body{
     background: var(--bg-color);
