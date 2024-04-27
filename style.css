@@ -517,8 +517,8 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       width: auto;
       height: auto;
-      .text-animation span {
-        display: block;
-      }
+    }
+    .text-animation span {
+      display: block;
     }
   }
