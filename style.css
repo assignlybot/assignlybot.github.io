@@ -437,7 +437,7 @@
     65%,
     80%,
     85% {
-        width: calc(100% + 8px);
+        width: calc(100% + 10px);
     }
   }
   
@@ -447,6 +447,9 @@
       font-size: 3rem;
     }
     #menu-icon{
+      display: block;
+    }
+    .text-animation span {
       display: block;
     }
     .studypal{
@@ -514,5 +517,8 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       width: auto;
       height: auto;
+      .text-animation span {
+        display: block;
+      }
     }
   }
