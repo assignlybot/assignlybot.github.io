@@ -291,14 +291,19 @@
     line-height: 1.7;
   }
   .leader{
+  
     display: grid;
+
     padding-bottom: 2rem;
-    padding-right: 70rem;
     justify-content: center;
     align-items: center;
   }
 
 .leader-box{
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--main-color);
   height: 600px;
   width: 380px;
@@ -321,9 +326,6 @@
   align-items: center;
   padding: 1rem;
   padding-top: 30rem;
-}
-.leader-box{
-  color: black;
 }
 .leader-info i{
   font-size: 8rem;
@@ -440,7 +442,10 @@
   }
   
   
-  @media(max-width:1300px){
+  @media(max-width:1000px){
+    .about h2{
+      font-size: 3rem;
+    }
     #menu-icon{
       display: block;
     }
@@ -451,7 +456,7 @@
       margin: auto;
     }
     .navbar{
-      position: absolute;
+      position: relative;
       top: 100%;
       right: 0;
       width: 50%;
@@ -498,11 +503,16 @@
     .text-animation span {
         white-space: pre;
       }
-      .leader{
-        padding-left: 20rem;
-      }
       .tutorialbtn{
         justify-content: center;
         padding-top: 4rem;
       }
+      
+  }
+  @media(max-width:820px){
+    .leader-box{
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      width: auto;
+      height: auto;
+    }
   }
