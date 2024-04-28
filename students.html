@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tutorial (Students)</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+  }
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  :root {
+    --bg-color: #161a16;
+    --second-bg-color: #151814;
+    --text-color: white;
+    --main-color: #93a891;
+  }
+body{
+  overflow: hidden;
+ min-height: 100vh;
+ background: var(--bg-color);
+ background-size: cover;
+ background-position: center;
+ transition: padding-left 0.6s ease;
+}
+body.body-active {
+    padding-left: 250px;
+  }
+.logo{
+    font-size: 20px;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .logo:hover{
+    transform: scale(1.1);
+  }
+
+  .header span{
+    color: var(--main-color);
+  }
+.side-bar{
+ background: var(--second-bg-color);
+ backdrop-filter: blur(15px);
+ width: 250px;
+ height: 100vh;
+ position: fixed;
+ top: 0;
+ left: -250px;
+ overflow-y: auto;
+ transition: 0.6s ease;
+ transition-property: left;
+ padding-top: 60px;
+}
+.side-bar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.side-bar.active{
+ left: 0;
+}
+h1{
+
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  padding-bottom: 13px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+
+.side-bar .menu{
+ width: 100%;
+ margin-top: 30px;
+}
+.menu-btn i{
+  color: white;
+}
+
+.menu-btn i:hover{
+  color: var(--main-color);
+}
+.itms{
+ position: relative;
+ cursor: pointer;
+}
+.sub-btn{
+background-color: #2d332b;
+}
+.sub-btn:hover{
+  background-color: #6e7e6c; 
+}
+
+.itms a{
+ color: white;
+ font-size: 16px;
+ text-decoration: none;
+ display: block;
+ padding: 5px 30px;
+ line-height: 60px;
+}
+.navbar h3{
+  color: white;
+  padding-top: 40px;
+  margin-left: 20px;
+}
+.navbar{
+  padding-top: 10px;
+}
+.navbar a{
+  display: block;
+  margin-top: 40px;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-left: 2rem;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s ease;
+ }
+ .navbar a:hover{
+  color: var(--main-color); 
+  text-decoration: underline;
+}
+
+
+.container{
+  padding-top: 40px;
+}
+
+.item:hover{
+  
+  border-bottom: 3px solid var(--main-color);
+  color: var(--main-color); 
+}
+
+.itms i{
+ margin-right: 15px;
+}
+
+.itms a .dropdown{
+ position: absolute;
+ right: 0;
+ margin: 20px;
+ transition: 0.3s ease;
+}
+
+.sub-menu{
+ background: #181b17;
+ display: none;
+}
+
+.sub-menu a{
+ padding-left: 80px;
+}
+.sub-menu a:hover{
+  background-color: #6e7e6c;
+ }
+
+ .sub-menu a.active {
+  background-color: #6e7e6c;
+}
+.rotate{
+ transform: rotate(90deg);
+}
+
+.close-btn{
+ position: absolute;
+ color: #fff;
+ font-size: 23px;
+ right:  0px;
+ margin: 15px;
+ cursor: pointer;
+}
+.close-btn:hover{
+  color: var(--main-color);
+}
+.menu-btn{
+ position: absolute;
+ color: rgb(0, 0, 0);
+ font-size: 35px;
+ margin: 25px;
+ cursor: pointer;
+}
+ 
+.and h1, .win{
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 50px;
+}
+
+.and h1, .win h1{
+ color: rgba(255, 255, 255, 0.8);
+ font-size: 60px;
+ text-align: center;
+ line-height: 80px;
+}
+
+.navbar a.active {
+    color: var(--main-color); 
+    text-decoration: underline;
+}
+
+@media (max-width: 900px){
+ .main h1{
+   font-size: 40px;
+   line-height: 60px;
+ }
+}
+img{
+  width: 100px;
+  margin: 15px;
+  border-radius: 50%;
+  margin-left: 70px;
+  border: 3px solid #b4b8b9;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 2rem 12%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+   </style>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+ </head>
+ <body>
+
+  <div class="menu-btn">
+    <i class="fas fa-bars"></i>
+  </div>
+  
+  <div class="side-bar">
+    <header class="header">
+      <div class="close-btn">
+        <i class="fas fa-times"></i>
+      </div>
+      <a href="#home" class="logo">Assign<span>ly</span></a>
+    </header>
+    <div class="container">
+      <div class="menu">
+        <div class="itms">
+          <a class="sub-btn"><i class='bx bxl-android' ></i>Android/Tablet<i class="fas fa-angle-right dropdown"></i></a>
+          <div class="sub-menu">
+            <a href="#andrd" class="android"><i class='bx bxl-android' ></i>Android/Tablet</a>
+            <a href="#wndws" class="windows"><i class='bx bxl-windows'></i>Windows</a>
+          </div>
+        </div>
+        <nav class="navbar">
+          <h3>Student Commands</h3>
+          <!-- Navbar links will be dynamically updated -->
+          <a href="#andstudents" >/students</a>
+          <a href="#andtodo">/to-do</a>
+          <a href="#andgraphicorganizer">/graphicorganizer</a>
+          <a href="#andmplay">/mplay</a>
+          <a href="#andpal">/pal</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sections for Android and Windows -->
+  <section class="and" id="andstudents">
+    <h1>Android - Students</h1>
+  </section>
+  <section class="and" id="andtodo">
+    <h1>Android - To-Do</h1>
+  </section>
+  <section class="and" id="andgraphicorganizer">
+    <h1>Android - Graphic-Organizer</h1>
+  </section> 
+  <section class="and" id="andmplay">
+    <h1>Android - M Play</h1>
+  </section>
+  <section class="and" id="andpal">
+    <h1>Android - Pal</h1>
+  </section>
+  <section class="win" id="winstudents">
+    <h1>Windows - Students</h1>
+  </section>
+  <section class="win" id="wintodo">
+    <h1>Windows - To-Do</h1>
+  </section>
+  <section class="win" id="wingraphicorganizer">
+    <h1>Windows - Graphic-Organizer</h1>
+  </section> 
+  <section class="win" id="winmplay">
+    <h1>Windows - M Play</h1>
+  </section>
+  <section class="win" id="winpal">
+    <h1>Windows - Pal</h1>
+  </section>
+  
+<script>
+$(document).ready(function(){
+    // Check if there is an active link stored in sessionStorage
+    var activeLink = sessionStorage.getItem('activeLink');
+    // If there is an active link, make it active
+    if(activeLink) {
+      $(activeLink).addClass('active');
+    } else {
+      // If there is no active link, set the default navbar link as active
+      $('.navbar a:first').addClass('active');
+    }
+
+    // Apply default styling to the active navbar link
+    $('.navbar a.active').css({
+        "color": "var(--main-color)",
+        "text-decoration": "underline"
+    });
+
+    // jquery for toggle sub menus
+    $('.sub-btn').click(function(){
+      $(this).next('.sub-menu').slideToggle();
+      $(this).find('.dropdown').toggleClass('rotate');
+    });
+
+    $('.navbar a').click(function(e){
+      e.preventDefault(); // Prevent default link behavior
+      var target = $(this).attr('href'); // Get target section id from href attribute
+      $('.and, .win').hide(); // Hide all sections
+      $(target).show(); // Show the target section
+
+      // Update navbar href attributes based on active submenu
+      updateNavbarHref();
+      
+      // Remove active class from all navbar links
+      $('.navbar a').removeClass('active');
+      // Add active class to the clicked navbar link
+      $(this).addClass('active');
+      
+      // Store the active link in sessionStorage
+      sessionStorage.setItem('activeLink', '#' + $(this).attr('id'));
+    });
+
+    $('.sub-menu a').click(function(e){
+  e.preventDefault(); // Prevent default link behavior
+  var target = $(this).attr('href'); // Get target section id from href attribute
+  $('.and, .win').hide(); // Hide all sections
+  $(target).show(); // Show the target section
+
+  // Remove active class from all sub-menu links
+  $('.sub-menu a').removeClass('active');
+  // Add active class to the clicked sub-menu link
+  $(this).addClass('active');
+
+  // Change header based on selected submenu
+  if ($(this).hasClass('android')) {
+    $('.sub-btn').html('<i class="bx bxl-android"></i>Android/Tablet<i class="fas fa-angle-right dropdown"></i>');
+    $('.and').show(); // Show Android sections
+    $('.win').hide(); // Hide Windows sections
+  } else if ($(this).hasClass('windows')) {
+    $('.sub-btn').html('<i class="bx bxl-windows"></i>Windows<i class="fas fa-angle-right dropdown"></i>');
+    $('.and').hide(); // Hide Android sections
+    $('.win').show(); // Show Windows sections
+  }
+
+  // Update navbar href attributes based on active submenu
+  updateNavbarHref();
+
+  // Remove active class from all navbar links except the first one
+  $('.navbar a').not(':first').removeClass('active');
+
+  // Store the active link in sessionStorage
+  sessionStorage.setItem('activeLink', '#' + $(this).attr('id'));
+    });
+
+    // jquery for expand and collapse the sidebar
+    $('.menu-btn').click(function(){
+      $('.side-bar').addClass('active');
+      $('body').addClass('body-active'); // Add class to body for animation
+      $('body').css('padding-left', '250px'); // Add padding to the right of the body when sidebar is active
+      $('.menu-btn').css("visibility", "hidden");
+    });
+
+    $('.close-btn').click(function(){
+      $('.side-bar').removeClass('active');
+      $('body').removeClass('body-active'); // Remove class from body for animation
+      $('body').css('padding-left', '0'); // Remove padding from the right of the body when sidebar is inactive
+      $('.menu-btn').css("visibility", "visible");
+    });
+
+    // By default, make Android submenu active and show Android sections
+    $('.sub-menu a.android').addClass('active');
+    $('.and').show();
+    $('.win').hide();
+
+    // Function to update navbar href attributes based on active submenu
+    function updateNavbarHref() {
+      var prefix = $('.sub-menu a.android').hasClass('active') ? '#and' : '#win';
+      $('.navbar a').each(function() {
+        var id = $(this).attr('href');
+        var targetId = id.replace(/^(#and|#win)/, prefix);
+        $(this).attr('href', targetId);
+      });
+
+      // Only keep the first navbar link active when changing sub-menu
+      $('.navbar a:first').addClass('active');
+    }
+  });
+</script>
+  
+  </body>
+  </html>
