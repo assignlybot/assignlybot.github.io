@@ -71,15 +71,6 @@ body.body-active {
 .side-bar.active{
  left: 0;
 }
-h1{
-
-  text-align: center;
-  font-weight: 600;
-  font-size: 25px;
-  padding-bottom: 13px;
-  font-family: sans-serif;
-  letter-spacing: 2px;
-}
 
 .side-bar .menu{
  width: 100%;
@@ -192,40 +183,20 @@ background-color: #2d332b;
  margin: 25px;
  cursor: pointer;
 }
- 
-.and h1, .win{
- height: 100vh;
- display: flex;
- justify-content: center;
- align-items: center;
- padding: 50px;
-}
-
-.and h1, .win h1{
- color: rgba(255, 255, 255, 0.8);
- font-size: 60px;
- text-align: center;
- line-height: 80px;
-}
-
-.navbar a.active {
+  .navbar a.active {
     color: var(--main-color); 
     text-decoration: underline;
 }
 
-@media (max-width: 900px){
- .main h1{
-   font-size: 40px;
-   line-height: 60px;
- }
+
+
+
+@media (max-width: 1000px){
+.and, .win{
+  color: white;
+  }
 }
-img{
-  width: 100px;
-  margin: 15px;
-  border-radius: 50%;
-  margin-left: 70px;
-  border: 3px solid #b4b8b9;
-}
+
 .header{
     position: fixed;
     width: 100%;
@@ -253,14 +224,14 @@ img{
       <div class="close-btn">
         <i class="fas fa-times"></i>
       </div>
-      <a href="#home" class="logo">Assign<span>ly</span></a>
+      <a href="#" class="logo">Assign<span>ly</span></a>
     </header>
     <div class="container">
       <div class="menu">
         <div class="itms">
-          <a class="sub-btn"><i class='bx bxl-android' ></i>Android/Tablet<i class="fas fa-angle-right dropdown"></i></a>
+          <a class="sub-btn"><i class='bx bxl-android' ></i>Android<i class="fas fa-angle-right dropdown"></i></a>
           <div class="sub-menu">
-            <a href="#andrd" class="android"><i class='bx bxl-android' ></i>Android/Tablet</a>
+            <a href="#andrd" class="android"><i class='bx bxl-android' ></i>Android</a>
             <a href="#wndws" class="windows"><i class='bx bxl-windows'></i>Windows</a>
           </div>
         </div>
@@ -277,18 +248,27 @@ img{
   </div>
   
   <!-- Sections for Android and Windows -->
+
   <section class="and" id="andteachers">
-    <h1>Android - Teachers</h1>
+    <div class="text">
+      <div class="slash">
+      <h1>/Teachers</h1>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+
+    <div class="video">
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
   </section>
-  <section class="and" id="andassign">
-    <h1>Android - Assign</h1>
-  </section>
-  <section class="and" id="andannouncement">
-    <h1>Android - Announcement</h1>
-  </section> 
-  <section class="and" id="andlist">
-    <h1>Android - List</h1>
-  </section>
+ 
+
+
+
+
+
+
+
 
   <section class="win" id="winteachers">
     <h1>Windows - Teachers</h1>
@@ -302,114 +282,137 @@ img{
   <section class="win" id="winlist">
     <h1>Windows - List</h1>
   </section>
-<script>
-$(document).ready(function(){
-    // Check if there is an active link stored in sessionStorage
-    var activeLink = sessionStorage.getItem('activeLink');
-    // If there is an active link, make it active
-    if(activeLink) {
-      $(activeLink).addClass('active');
-    } else {
-      // If there is no active link, set the default navbar link as active
-      $('.navbar a:first').addClass('active');
-    }
-
-    // Apply default styling to the active navbar link
-    $('.navbar a.active').css({
-        "color": "var(--main-color)",
-        "text-decoration": "underline"
+  <script>
+    $(document).ready(function(){
+        // Function to handle sidebar visibility on small screens
+        function handleSidebarVisibility() {
+            if ($(window).width() <= 1000) {
+                $('.side-bar').removeClass('active');
+                $('body').removeClass('body-active');
+                $('body').css('padding-left', '0');
+                $('.menu-btn').css("visibility", "visible");
+                $('.close-btn').show(); // Show close button when screen width is below 1000px
+            } else {
+                $('.close-btn').hide(); // Hide close button when screen width is larger than 1000px
+            }
+        }
+    
+        // Call the function initially and on window resize
+        handleSidebarVisibility();
+        $(window).resize(handleSidebarVisibility);
+    
+        // Check if there is an active link stored in sessionStorage
+        var activeLink = sessionStorage.getItem('activeLink');
+        // If there is an active link, make it active
+        if(activeLink) {
+            $(activeLink).addClass('active');
+            $('.side-bar').addClass('active'); // Add this line to show the sidebar if there's an active link
+            $('body').addClass('body-active'); // Add class to body for animation
+            $('body').css('padding-left', '250px'); // Add padding to the right of the body when sidebar is active
+            $('.menu-btn').css("visibility", "hidden");
+        } else {
+            // If there is no active link, set the default navbar link as active
+            $('.navbar a:first').addClass('active');
+        }
+    
+        // Apply default styling to the active navbar link
+        $('.navbar a.active').css({
+            "color": "var(--main-color)",
+            "text-decoration": "underline"
+        });
+    
+        // jquery for toggle sub menus
+        $('.sub-btn').click(function(){
+            $(this).next('.sub-menu').slideToggle();
+            $(this).find('.dropdown').toggleClass('rotate');
+        });
+    
+        $('.navbar a').click(function(e){
+            e.preventDefault(); // Prevent default link behavior
+            var target = $(this).attr('href'); // Get target section id from href attribute
+            $('.and, .win').hide(); // Hide all sections
+            $(target).show(); // Show the target section
+    
+            // Update navbar href attributes based on active submenu
+            updateNavbarHref();
+            
+            // Remove active class from all navbar links
+            $('.navbar a').removeClass('active');
+            // Add active class to the clicked navbar link
+            $(this).addClass('active');
+            
+            // Store the active link in sessionStorage
+            sessionStorage.setItem('activeLink', '#' + $(this).attr('id'));
+        });
+    
+        $('.sub-menu a').click(function(e){
+            e.preventDefault(); // Prevent default link behavior
+            var target = $(this).attr('href'); // Get target section id from href attribute
+            $('.and, .win').hide(); // Hide all sections
+            $(target).show(); // Show the target section
+          
+            // Remove active class from all sub-menu links
+            $('.sub-menu a').removeClass('active');
+            // Add active class to the clicked sub-menu link
+            $(this).addClass('active');
+          
+            // Change header based on selected submenu
+            if ($(this).hasClass('android')) {
+                $('.sub-btn').html('<i class="bx bxl-android"></i>Android<i class="fas fa-angle-right dropdown"></i>');
+                $('.and').show(); // Show Android sections
+                $('.win').hide(); // Hide Windows sections
+            } else if ($(this).hasClass('windows')) {
+                $('.sub-btn').html('<i class="bx bxl-windows"></i>Windows<i class="fas fa-angle-right dropdown"></i>');
+                $('.and').hide(); // Hide Android sections
+                $('.win').show(); // Show Windows sections
+            }
+          
+            // Update navbar href attributes based on active submenu
+            updateNavbarHref();
+          
+            // Remove active class from all navbar links except the first one
+            $('.navbar a').not(':first').removeClass('active');
+          
+            // Store the active link in sessionStorage
+            sessionStorage.setItem('activeLink', '#' + $(this).attr('id'));
+        });
+    
+        // jquery for expand and collapse the sidebar
+        $('.menu-btn').click(function(){
+            $('.side-bar').toggleClass('active');
+            $('body').toggleClass('body-active'); // Toggle class to body for animation
+            var paddingValue = $('.side-bar').hasClass('active') ? '250px' : '0';
+            $('body').css('padding-left', paddingValue); // Toggle padding to the right of the body based on sidebar state
+            $('.menu-btn').css("visibility", "hidden");
+        });
+    
+        // Event listener for close button
+        $('.close-btn').click(function() {
+            $('.side-bar').removeClass('active');
+            $('body').removeClass('body-active');
+            $('body').css('padding-left', '0');
+            $('.menu-btn').css("visibility", "visible");
+        });
+    
+        // By default, make Android submenu active and show Android sections
+        $('.sub-menu a.android').addClass('active');
+        $('.and').show();
+        $('.win').hide();
+    
+        // Function to update navbar href attributes based on active submenu
+        function updateNavbarHref() {
+            var prefix = $('.sub-menu a.android').hasClass('active') ? '#and' : '#win';
+            $('.navbar a').each(function() {
+                var id = $(this).attr('href');
+                var targetId = id.replace(/^(#and|#win)/, prefix);
+                $(this).attr('href', targetId);
+            });
+    
+            // Only keep the first navbar link active when changing sub-menu
+            $('.navbar a:first').addClass('active');
+        }
     });
-
-    // jquery for toggle sub menus
-    $('.sub-btn').click(function(){
-      $(this).next('.sub-menu').slideToggle();
-      $(this).find('.dropdown').toggleClass('rotate');
-    });
-
-    $('.navbar a').click(function(e){
-      e.preventDefault(); // Prevent default link behavior
-      var target = $(this).attr('href'); // Get target section id from href attribute
-      $('.and, .win').hide(); // Hide all sections
-      $(target).show(); // Show the target section
-
-      // Update navbar href attributes based on active submenu
-      updateNavbarHref();
-      
-      // Remove active class from all navbar links
-      $('.navbar a').removeClass('active');
-      // Add active class to the clicked navbar link
-      $(this).addClass('active');
-      
-      // Store the active link in sessionStorage
-      sessionStorage.setItem('activeLink', '#' + $(this).attr('id'));
-    });
-
-    $('.sub-menu a').click(function(e){
-  e.preventDefault(); // Prevent default link behavior
-  var target = $(this).attr('href'); // Get target section id from href attribute
-  $('.and, .win').hide(); // Hide all sections
-  $(target).show(); // Show the target section
-
-  // Remove active class from all sub-menu links
-  $('.sub-menu a').removeClass('active');
-  // Add active class to the clicked sub-menu link
-  $(this).addClass('active');
-
-  // Change header based on selected submenu
-  if ($(this).hasClass('android')) {
-    $('.sub-btn').html('<i class="bx bxl-android"></i>Android/Tablet<i class="fas fa-angle-right dropdown"></i>');
-    $('.and').show(); // Show Android sections
-    $('.win').hide(); // Hide Windows sections
-  } else if ($(this).hasClass('windows')) {
-    $('.sub-btn').html('<i class="bx bxl-windows"></i>Windows<i class="fas fa-angle-right dropdown"></i>');
-    $('.and').hide(); // Hide Android sections
-    $('.win').show(); // Show Windows sections
-  }
-
-  // Update navbar href attributes based on active submenu
-  updateNavbarHref();
-
-  // Remove active class from all navbar links except the first one
-  $('.navbar a').not(':first').removeClass('active');
-
-  // Store the active link in sessionStorage
-  sessionStorage.setItem('activeLink', '#' + $(this).attr('id'));
-    });
-
-    // jquery for expand and collapse the sidebar
-    $('.menu-btn').click(function(){
-      $('.side-bar').addClass('active');
-      $('body').addClass('body-active'); // Add class to body for animation
-      $('body').css('padding-left', '250px'); // Add padding to the right of the body when sidebar is active
-      $('.menu-btn').css("visibility", "hidden");
-    });
-
-    $('.close-btn').click(function(){
-      $('.side-bar').removeClass('active');
-      $('body').removeClass('body-active'); // Remove class from body for animation
-      $('body').css('padding-left', '0'); // Remove padding from the right of the body when sidebar is inactive
-      $('.menu-btn').css("visibility", "visible");
-    });
-
-    // By default, make Android submenu active and show Android sections
-    $('.sub-menu a.android').addClass('active');
-    $('.and').show();
-    $('.win').hide();
-
-    // Function to update navbar href attributes based on active submenu
-    function updateNavbarHref() {
-      var prefix = $('.sub-menu a.android').hasClass('active') ? '#and' : '#win';
-      $('.navbar a').each(function() {
-        var id = $(this).attr('href');
-        var targetId = id.replace(/^(#and|#win)/, prefix);
-        $(this).attr('href', targetId);
-      });
-
-      // Only keep the first navbar link active when changing sub-menu
-      $('.navbar a:first').addClass('active');
-    }
-  });
-</script>
-  
+    </script>
+    
   </body>
   </html>

@@ -27,7 +27,6 @@
     --main-color: #93a891;
   }
 body{
-  overflow: hidden;
  min-height: 100vh;
  background: var(--bg-color);
  background-size: cover;
@@ -192,32 +191,64 @@ background-color: #2d332b;
  margin: 25px;
  cursor: pointer;
 }
- 
-.and h1, .win{
- height: 100vh;
- display: flex;
- justify-content: center;
- align-items: center;
- padding: 50px;
-}
-
-.and h1, .win h1{
- color: rgba(255, 255, 255, 0.8);
- font-size: 60px;
- text-align: center;
- line-height: 80px;
-}
-
 .navbar a.active {
     color: var(--main-color); 
     text-decoration: underline;
 }
+.grp-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 95vh;
+  padding: 3rem calc((100vw - 1300px) / 2);
+}
 
-@media (max-width: 900px){
- .main h1{
-   font-size: 40px;
-   line-height: 60px;
- }
+.slash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #000;
+  padding: 0rem 2rem;
+}
+
+.slash h1 {
+    color: white;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.slash p {
+    color: white;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 2rem;
+  width: 32vw;
+    filter: drop-shadow(0 0 25px var(--main-color));
+    transition: 0.4s ease-in-out;
+}
+
+.video:hover{
+    filter: drop-shadow(0 0 50px var(--main-color));
+  }
+
+
+
+@media screen and (max-width: 1200px) {
+    .grp-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+      }
 }
 img{
   width: 100px;
@@ -260,8 +291,8 @@ img{
         <div class="itms">
           <a class="sub-btn"><i class='bx bxl-android' ></i>Android/Tablet<i class="fas fa-angle-right dropdown"></i></a>
           <div class="sub-menu">
-            <a href="#andrd" class="android"><i class='bx bxl-android' ></i>Android/Tablet</a>
-            <a href="#wndws" class="windows"><i class='bx bxl-windows'></i>Windows</a>
+            <a href="#andstudents" class="android"><i class='bx bxl-android' ></i>Android/Tablet</a>
+            <a href="#winstudents" class="windows"><i class='bx bxl-windows'></i>Windows</a>
           </div>
         </div>
         <nav class="navbar">
@@ -279,20 +310,71 @@ img{
   
   <!-- Sections for Android and Windows -->
   <section class="and" id="andstudents">
-    <h1>Android - Students</h1>
-  </section>
-  <section class="and" id="andtodo">
-    <h1>Android - To-Do</h1>
-  </section>
-  <section class="and" id="andgraphicorganizer">
-    <h1>Android - Graphic-Organizer</h1>
-  </section> 
-  <section class="and" id="andmplay">
-    <h1>Android - M Play</h1>
-  </section>
-  <section class="and" id="andpal">
-    <h1>Android - Pal</h1>
-  </section>
+    <div class="grp-text">
+        <div class="slash">
+      <h1>/students</h1>
+      <p>testaseawefaweofjaweoifawjeofiajwdf
+      </p>
+    </div>
+    <div class="video">
+            <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
+  </div>
+</section>
+
+<section class="and" id="andtodo">
+  <div class="grp-text">
+      <div class="slash">
+    <h1>/to-do</h1>
+    <p>testaseawefaweofjaweoifawjeofiajwdf
+    </p>
+  </div>
+  <div class="video">
+          <video controls src="/VIDS/test1.mp4" width="300"></video>
+  </div>
+</div>
+</section>
+
+<section class="and" id="andgraphicorganizer">
+  <div class="grp-text">
+      <div class="slash">
+    <h1>/graphicorganizer</h1>
+    <p>testaseawefaweofjaweoifawjeofiajwdf
+    </p>
+  </div>
+  <div class="video">
+          <video controls src="/VIDS/test1.mp4" width="300"></video>
+  </div>
+</div>
+</section>
+
+<section class="and" id="andmplay">
+  <div class="grp-text">
+      <div class="slash">
+    <h1>/mplay</h1>
+    <p>testaseawefaweofjaweoifawjeofiajwdf
+    </p>
+  </div>
+  <div class="video">
+          <video controls src="/VIDS/test1.mp4" width="300"></video>
+  </div>
+</div>
+</section>
+
+<section class="and" id="andpal">
+  <div class="grp-text">
+      <div class="slash">
+    <h1>/pal</h1>
+    <p>testaseawefaweofjaweoifawjeofiajwdf
+    </p>
+  </div>
+  <div class="video">
+          <video controls src="/VIDS/test1.mp4" width="300"></video>
+  </div>
+</div>
+</section>
+
+
   <section class="win" id="winstudents">
     <h1>Windows - Students</h1>
   </section>
@@ -309,8 +391,8 @@ img{
     <h1>Windows - Pal</h1>
   </section>
   
-<script>
-$(document).ready(function(){
+  <script>
+    $(document).ready(function(){
     // Check if there is an active link stored in sessionStorage
     var activeLink = sessionStorage.getItem('activeLink');
     // If there is an active link, make it active
@@ -319,6 +401,8 @@ $(document).ready(function(){
     } else {
       // If there is no active link, set the default navbar link as active
       $('.navbar a:first').addClass('active');
+      // Store the active link in sessionStorage
+      sessionStorage.setItem('activeLink', '#' + $('.navbar a:first').attr('id'));
     }
 
     // Apply default styling to the active navbar link
@@ -332,6 +416,9 @@ $(document).ready(function(){
       $(this).next('.sub-menu').slideToggle();
       $(this).find('.dropdown').toggleClass('rotate');
     });
+
+    // Function to hide all sections except the first one
+    $('.and, .win').not(':first').hide();
 
     $('.navbar a').click(function(e){
       e.preventDefault(); // Prevent default link behavior
@@ -352,35 +439,40 @@ $(document).ready(function(){
     });
 
     $('.sub-menu a').click(function(e){
-  e.preventDefault(); // Prevent default link behavior
-  var target = $(this).attr('href'); // Get target section id from href attribute
-  $('.and, .win').hide(); // Hide all sections
-  $(target).show(); // Show the target section
+      e.preventDefault(); // Prevent default link behavior
+      var target = $(this).attr('href'); // Get target section id from href attribute
+      $('.and, .win').hide(); // Hide all sections
+      $(target).show(); // Show the target section
 
-  // Remove active class from all sub-menu links
-  $('.sub-menu a').removeClass('active');
-  // Add active class to the clicked sub-menu link
-  $(this).addClass('active');
+      // Remove active class from all sub-menu links
+      $('.sub-menu a').removeClass('active');
+      // Add active class to the clicked sub-menu link
+      $(this).addClass('active');
 
-  // Change header based on selected submenu
-  if ($(this).hasClass('android')) {
-    $('.sub-btn').html('<i class="bx bxl-android"></i>Android/Tablet<i class="fas fa-angle-right dropdown"></i>');
-    $('.and').show(); // Show Android sections
-    $('.win').hide(); // Hide Windows sections
-  } else if ($(this).hasClass('windows')) {
-    $('.sub-btn').html('<i class="bx bxl-windows"></i>Windows<i class="fas fa-angle-right dropdown"></i>');
-    $('.and').hide(); // Hide Android sections
-    $('.win').show(); // Show Windows sections
-  }
+      // Change header based on selected submenu
+      if ($(this).hasClass('android')) {
+        $('.sub-btn').html('<i class="bx bxl-android"></i>Android/Tablet<i class="fas fa-angle-right dropdown"></i>');
+        $('.and').hide(); // Hide all Android sections
+        $('.and:first').show(); // Show only the first Android section
+        $('.win').hide(); // Hide Windows sections
 
-  // Update navbar href attributes based on active submenu
-  updateNavbarHref();
+        // Update navbar href attributes based on active submenu for Android
+        updateNavbarHrefAndroid();
+      } else if ($(this).hasClass('windows')) {
+        $('.sub-btn').html('<i class="bx bxl-windows"></i>Windows<i class="fas fa-angle-right dropdown"></i>');
+        $('.and').hide(); // Hide Android sections
+        $('.win').hide(); // Hide all Windows sections
+        $('.win:first').show(); // Show only the first Windows section
 
-  // Remove active class from all navbar links except the first one
-  $('.navbar a').not(':first').removeClass('active');
+        // Update navbar href attributes based on active submenu for Windows
+        updateNavbarHrefWindows();
+      }
 
-  // Store the active link in sessionStorage
-  sessionStorage.setItem('activeLink', '#' + $(this).attr('id'));
+      // Remove active class from all navbar links except the first one
+      $('.navbar a').not(':first').removeClass('active');
+
+      // Store the active link in sessionStorage
+      sessionStorage.setItem('activeLink', '#' + $(this).attr('id'));
     });
 
     // jquery for expand and collapse the sidebar
@@ -403,6 +495,30 @@ $(document).ready(function(){
     $('.and').show();
     $('.win').hide();
 
+    // Function to update navbar href attributes based on active submenu for Android
+    function updateNavbarHrefAndroid() {
+      $('.navbar a').each(function() {
+        var id = $(this).attr('href');
+        var targetId = id.replace(/^#win/, '#and');
+        $(this).attr('href', targetId);
+      });
+
+      // Only keep the first navbar link active when changing sub-menu
+      $('.navbar a:first').addClass('active');
+    }
+
+    // Function to update navbar href attributes based on active submenu for Windows
+    function updateNavbarHrefWindows() {
+      $('.navbar a').each(function() {
+        var id = $(this).attr('href');
+        var targetId = id.replace(/^#and/, '#win');
+        $(this).attr('href', targetId);
+      });
+
+      // Only keep the first navbar link active when changing sub-menu
+      $('.navbar a:first').addClass('active');
+    }
+
     // Function to update navbar href attributes based on active submenu
     function updateNavbarHref() {
       var prefix = $('.sub-menu a.android').hasClass('active') ? '#and' : '#win';
@@ -415,8 +531,13 @@ $(document).ready(function(){
       // Only keep the first navbar link active when changing sub-menu
       $('.navbar a:first').addClass('active');
     }
+
+    // Trigger click event on the first navbar link
+    $('.navbar a:first').trigger('click');
   });
-</script>
+
+
+    </script>
   
   </body>
   </html>
