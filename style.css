@@ -171,6 +171,20 @@
     box-shadow: 0 0 25px var(--main-color),
                 0 0 50px var(--main-color);
   }
+  ul{
+    text-align: left;
+    padding-left: 20px;
+  }
+  .roles span {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .roles {
+    line-height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
   .btn-group a:nth-of-type(2){
     background-color: black;
     color: var(--main-color);
@@ -287,7 +301,7 @@
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    padding-top: 25rem;
+    padding-top: 5rem;
   }
  
   .about-info i{
@@ -301,15 +315,12 @@
   .about-info p{
     font-size: 1.4rem;
     font-weight: 600;
-    line-height: 1.7;
   }
   .about-info span{
     font-size: 20px;
   }
   .leader{
-  
     display: grid;
-
     padding-bottom: 2rem;
     justify-content: center;
     align-items: center;
@@ -341,7 +352,8 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  padding-top: 30rem;
+  padding-top: 25rem;
+  line-height: 30px ;
 }
 .leader-info i{
   font-size: 8rem;
@@ -356,6 +368,14 @@
   font-weight: 600;
   line-height: 1.7;
 }
+.leader-info img{
+  padding-bottom: 3rem;
+}
+.leader-info{
+  display: flex;
+  padding-bottom: 20rem;
+}
+
 
   .footer ul{
     text-align: center;
@@ -403,6 +423,10 @@
     border-left: 3px solid var(--bg-color);
     right: -8px;
     animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+  }
+
+  .list{
+    padding-right: 2.5rem;
   }
   @keyframes cursor {
     to{
