@@ -7,6 +7,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
    <style>
+    /* S */
     * {
     margin: 0;
     padding: 0;
@@ -20,11 +21,27 @@
   ::-webkit-scrollbar{
     display: none;
   }
+  
   :root {
     --bg-color: #161a16;
     --second-bg-color: #151814;
     --text-color: white;
     --main-color: #93a891;
+    --hover:rgb(174, 197, 172)1;
+  }
+  html {
+    font-size: 60%;
+    overflow-x: hidden;
+  }
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 4rem 12%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 100;
   }
 body{
  min-height: 100vh;
@@ -32,19 +49,20 @@ body{
  background-size: cover;
  background-position: center;
  transition: padding-left 0.6s ease;
+ color: var(--text-color);
 }
 body.body-active {
     padding-left: 250px;
   }
 .logo{
-    font-size: 20px;
+    font-size: 30px;
     color: var(--text-color);
     font-weight: 800;
     cursor: pointer;
     transition: 0.3s ease;
   }
   .logo:hover{
-    transform: scale(1.1);
+    transform: scale(1.5);
   }
 
   .header span{
@@ -70,15 +88,6 @@ body.body-active {
 .side-bar.active{
  left: 0;
 }
-h1{
-
-  text-align: center;
-  font-weight: 600;
-  font-size: 25px;
-  padding-bottom: 13px;
-  font-family: sans-serif;
-  letter-spacing: 2px;
-}
 
 .side-bar .menu{
  width: 100%;
@@ -95,13 +104,6 @@ h1{
  position: relative;
  cursor: pointer;
 }
-.sub-btn{
-background-color: #2d332b;
-}
-.sub-btn:hover{
-  background-color: #6e7e6c; 
-}
-
 .itms a{
  color: white;
  font-size: 16px;
@@ -110,33 +112,6 @@ background-color: #2d332b;
  padding: 5px 30px;
  line-height: 60px;
 }
-.navbar h3{
-  color: white;
-  padding-top: 40px;
-  margin-left: 20px;
-}
-.navbar{
-  padding-top: 10px;
-}
-.navbar a{
-  display: block;
-  margin-top: 40px;
-  font-size: 1rem;
-  color: var(--text-color);
-  margin-left: 2rem;
-  border-bottom: 3px solid transparent;
-  transition: 0.3s ease;
- }
- .navbar a:hover{
-  color: var(--main-color); 
-  text-decoration: underline;
-}
-
-
-.container{
-  padding-top: 40px;
-}
-
 .item:hover{
   
   border-bottom: 3px solid var(--main-color);
@@ -153,6 +128,44 @@ background-color: #2d332b;
  margin: 20px;
  transition: 0.3s ease;
 }
+
+.sub-btn{
+background-color: #2d332b;
+}
+.sub-btn:hover{
+  background-color: #6e7e6c; 
+}
+.navbar h3{
+  color: white;
+  padding-top: 40px;
+  margin-left: 20px;
+  font-size: 20px;
+}
+.navbar{
+  padding-top: 10px;
+}
+.navbar a{
+  display: block;
+  margin-top: 40px;
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-left: 2rem;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s ease;
+ }
+ .navbar a:hover{
+  color: var(--main-color); 
+  text-decoration: underline;
+}
+
+.navbar a.active {
+    color: var(--main-color); 
+    text-decoration: underline;
+}
+.container{
+  padding-top: 40px;
+}
+
 
 .sub-menu{
  background: #181b17;
@@ -172,7 +185,6 @@ background-color: #2d332b;
 .rotate{
  transform: rotate(90deg);
 }
-
 .close-btn{
  position: absolute;
  color: #fff;
@@ -191,100 +203,84 @@ background-color: #2d332b;
  margin: 25px;
  cursor: pointer;
 }
-.navbar a.active {
-    color: var(--main-color); 
-    text-decoration: underline;
-}
-.grp-text {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 95vh;
-  padding: 3rem calc((100vw - 1300px) / 2);
-}
-
-.slash {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  color: #000;
-  padding: 0rem 2rem;
-}
-
-.slash h1 {
-    color: white;
-  margin-bottom: 1rem;
-  font-size: 3rem;
-}
-
-.slash p {
-    color: white;
-  margin-bottom: 2rem;
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
-
-
-.video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0rem 2rem;
-  width: 32vw;
+.and, .win{
+    min-height: 100vh;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20rem;
+  }
+  .slash h1 {
+    font-size: 4vw;
+    font-weight: 700;
+    line-height: 1;
+    padding-bottom: 6rem;
+  }
+  .grp-text p{
+    font-size: 1vw;
+    font-weight: 500;
+    line-height: 1.8;
+  }
+  .win{
+    padding-top: 10rem;
+    flex-direction: column;
+  }
+  .video video{
+    width: 32rem;
     filter: drop-shadow(0 0 25px var(--main-color));
     transition: 0.4s ease-in-out;
-}
-
-.video:hover{
+  }
+  .video video:hover{
     filter: drop-shadow(0 0 50px var(--main-color));
   }
-
-
-
-@media screen and (max-width: 1000px) {
-    .grp-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: auto;
-      }
-      .slash{
-        text-align: center;
-        padding-bottom: 6em;
-        padding: 3rem 12% 3rem;
-      }
-      .slash h1{
-        font-size: 6vh;
-        
-      }
-      .slash p{
-        white-space: pre;
-        line-break: auto;
-      }
-
-}
-img{
-  width: 100px;
-  margin: 15px;
-  border-radius: 50%;
-  margin-left: 70px;
-  border: 3px solid #b4b8b9;
-}
-.header{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    padding: 2rem 12%;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+  @media(max-width:1200px){
+    .and, .win{
+      padding-top: 10rem;
+    }
+    .home{
+      flex-direction: column;
+      margin: 5rem 0;
+      gap: 5rem;
+    }
+    .grp-text{
+      align-items: center;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .and, .win{
+      flex-direction: column;
+      gap: 5rem;
+    }
+    .slash h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 1;
+    padding-bottom: 6rem;
   }
+
+  .grp-text p{
+    font-size: 1.5rem;
+  }
+  #andgraphicorganizer h1, #wingraphicorganizer h1{
+      font-size: 8vw;
+    }
+  }
+
+  @media(max-width:900px){
+    .and, .win{
+      padding-top: 10rem;
+    }
+    .and, .win{
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+  }
+
    </style>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
  </head>
@@ -323,89 +319,138 @@ img{
     </div>
   </div>
   
-  <!-- Sections for Android and Windows -->
+  <!-- Sections for Android -->
   <section class="and" id="andstudents">
     <div class="grp-text">
-        <div class="slash">
+      <div class="slash">
       <h1>/students</h1>
-      <p>testaseawefaweofjaweoifawjeofiajwdf
-      </p>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </div>
+
     <div class="video">
-            <video controls src="/VIDS/test1.mp4" width="300"></video>
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="and" id="andtodo">
-  <div class="grp-text">
+  <section class="and" id="andtodo">
+    <div class="grp-text">
       <div class="slash">
-    <h1>/to-do</h1>
-    <p>testaseawefaweofjaweoifawjeofiajwdf
-    </p>
-  </div>
-  <div class="video">
-          <video controls src="/VIDS/test1.mp4" width="300"></video>
-  </div>
-</div>
-</section>
+      <h1>/to-do</h1>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
 
-<section class="and" id="andgraphicorganizer">
-  <div class="grp-text">
+    <div class="video">
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
+  </section>
+
+  <section class="and" id="andgraphicorganizer">
+    <div class="grp-text">
       <div class="slash">
-    <h1>/graphicorganizer</h1>
-    <p>testaseawefaweofjaweoifawjeofiajwdf
-    </p>
-  </div>
-  <div class="video">
-          <video controls src="/VIDS/test1.mp4" width="300"></video>
-  </div>
-</div>
-</section>
+      <h1>/graphicorganizer</h1>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
 
-<section class="and" id="andmplay">
-  <div class="grp-text">
+    <div class="video">
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
+  </section>  
+
+  <section class="and" id="andmplay">
+    <div class="grp-text">
       <div class="slash">
-    <h1>/mplay</h1>
-    <p>testaseawefaweofjaweoifawjeofiajwdf
-    </p>
-  </div>
-  <div class="video">
-          <video controls src="/VIDS/test1.mp4" width="300"></video>
-  </div>
-</div>
-</section>
+      <h1>/mplay</h1>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
 
-<section class="and" id="andpal">
-  <div class="grp-text">
+    <div class="video">
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
+  </section>  
+
+  <section class="and" id="andpal">
+    <div class="grp-text">
       <div class="slash">
-    <h1>/pal</h1>
-    <p>testaseawefaweofjaweoifawjeofiajwdf
-    </p>
-  </div>
-  <div class="video">
-          <video controls src="/VIDS/test1.mp4" width="300"></video>
-  </div>
-</div>
-</section>
+      <h1>/pal</h1>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
 
+    <div class="video">
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
+  </section>  
 
+  <!-- Sections for Windows -->
   <section class="win" id="winstudents">
-    <h1>Windows - Students</h1>
+    <div class="grp-text">
+      <div class="slash">
+      <h1>/students</h1>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+
+    <div class="video">
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
   </section>
+
   <section class="win" id="wintodo">
-    <h1>Windows - To-Do</h1>
+    <div class="grp-text">
+      <div class="slash">
+      <h1>/to-do</h1>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+
+    <div class="video">
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
   </section>
+
   <section class="win" id="wingraphicorganizer">
-    <h1>Windows - Graphic-Organizer</h1>
-  </section> 
-  <section class="win" id="winmplay">
-    <h1>Windows - M Play</h1>
+    <div class="grp-text">
+      <div class="slash">
+      <h1>/graphicorganizer</h1>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+
+    <div class="video">
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
   </section>
-  <section class="win" id="winpal">
-    <h1>Windows - Pal</h1>
+
+  <section class="win" id="winmplay">
+    <div class="grp-text">
+      <div class="slash">
+      <h1>/mplay</h1>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+
+    <div class="video">
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
   </section>
   
+  <section class="win" id="winpal">
+    <div class="grp-text">
+      <div class="slash">
+      <h1>/pal</h1>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+
+    <div class="video">
+      <video controls src="/VIDS/test1.mp4" width="300"></video>
+    </div>
+  </section>
+
   <script>
     $(document).ready(function(){
     // Check if there is an active link stored in sessionStorage
