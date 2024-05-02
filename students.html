@@ -139,7 +139,7 @@ background-color: #2d332b;
   color: white;
   padding-top: 40px;
   margin-left: 20px;
-  font-size: 20px;
+  font-size: 18px;
 }
 .navbar{
   padding-top: 10px;
@@ -147,7 +147,7 @@ background-color: #2d332b;
 .navbar a{
   display: block;
   margin-top: 40px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--text-color);
   margin-left: 2rem;
   border-bottom: 3px solid transparent;
@@ -301,9 +301,9 @@ background-color: #2d332b;
     <div class="container">
       <div class="menu">
         <div class="itms">
-          <a class="sub-btn"><i class='bx bxl-android' ></i>Android/Tablet<i class="fas fa-angle-right dropdown"></i></a>
+          <a class="sub-btn"><i class='bx bxl-android' ></i>Android<i class="fas fa-angle-right dropdown"></i></a>
           <div class="sub-menu">
-            <a href="#andstudents" class="android"><i class='bx bxl-android' ></i>Android/Tablet</a>
+            <a href="#andstudents" class="android"><i class='bx bxl-android' ></i>Android</a>
             <a href="#winstudents" class="windows"><i class='bx bxl-windows'></i>Windows</a>
           </div>
         </div>
@@ -512,7 +512,7 @@ background-color: #2d332b;
 
       // Change header based on selected submenu
       if ($(this).hasClass('android')) {
-        $('.sub-btn').html('<i class="bx bxl-android"></i>Android/Tablet<i class="fas fa-angle-right dropdown"></i>');
+        $('.sub-btn').html('<i class="bx bxl-android"></i>Android<i class="fas fa-angle-right dropdown"></i>');
         $('.and').hide(); // Hide all Android sections
         $('.and:first').show(); // Show only the first Android section
         $('.win').hide(); // Hide Windows sections
